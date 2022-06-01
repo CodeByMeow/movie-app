@@ -1,4 +1,4 @@
-const API_URL = "https://api.themoviedb.org/3/";
+const API_URL = "https://api.themoviedb.org/3/movie";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`;
@@ -9,15 +9,20 @@ const BACKDROP_SIZE = "w1280";
 // w92, w154, w185, w342, w500, w780, original
 const POSTER_SIZE = "w780";
 
+const MOVIE_POPULAR = "popular";
+const MOVIE_UPCOMING = "upcoming";
+const MOVIE_TOP_RATED = "top_rated";
+const MOVIE_NOW_PLAYING = "now_playing";
+
 export {
   API_URL,
   API_KEY,
   SEARCH_BASE_URL,
-  POPULAR_BASE_URL,
-  REQUEST_TOKEN_URL,
-  LOGIN_URL,
-  SESSION_ID_URL,
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
   POSTER_SIZE,
+  MOVIE_POPULAR,
+  MOVIE_UPCOMING,
+  MOVIE_TOP_RATED,
+  MOVIE_NOW_PLAYING,
 };
