@@ -19,6 +19,21 @@ export const Text = styled.div`
   color: var(--white);
   bottom:30px;
 
+  a {
+    border:none;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: var(--red);
+    color: var(--darkGray);
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+
+  a:hover {
+    color: var(--white);
+  }
+
   h1 {
     font-size: var(--fontSuperBig);
   }
