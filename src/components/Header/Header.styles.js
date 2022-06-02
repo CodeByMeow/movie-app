@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   background-color: var(--darkGray);
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;
 
 export const Content = styled.div`

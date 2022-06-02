@@ -22,6 +22,7 @@ HeroImage.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   overview: PropTypes.string,
+  movie_id: PropTypes.number,
 }
 
 export default HeroImage;
