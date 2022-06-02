@@ -1,4 +1,5 @@
 import { Wrapper, Content, Text } from "./Footer.styles";
+import PropTypes from 'prop-types';
 
 const Footer = ({ creator, year }) => {
   return (
@@ -10,6 +11,11 @@ const Footer = ({ creator, year }) => {
       </Content>
     </Wrapper>
   )
+}
+
+Footer.protoTypes = {
+  creator: PropTypes.string,
+  year: PropTypes.number,
 }
 
 export default Footer;

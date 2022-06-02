@@ -7,19 +7,19 @@ import Title from "../../components/Title";
 
 const HomePage = () => {
   const { movies: { popular, top_rated, upcoming, now_playing }, error, loading } = useHomeFetch();
-
+  const [now_playing_movie] = now_playing;
   if (error) {
     return <h1>Something Went Wrong...</h1>;
   }
 
   return (
     <>
-      {now_playing[0] ? (
+      {now_playing_movie ? (
         <HeroImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${now_playing[0].backdrop_path}`}
-          title={now_playing[0].title}
-          overview={now_playing[0].overview}
-          movie_id={now_playing[0].id}
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${now_playing_movie.backdrop_path}`}
+          title={now_playing_movie.title}
+          overview={now_playing_movie.overview}
+          movie_id={now_playing_movie.id}
         />
       ) : null}
 

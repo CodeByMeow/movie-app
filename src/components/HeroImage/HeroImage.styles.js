@@ -28,11 +28,11 @@ export const Text = styled.div`
     color: var(--darkGray);
     cursor: pointer;
     transition: all .3s ease;
+    :hover {
+      color: var(--white);
+    }
   }
 
-  a:hover {
-    color: var(--white);
-  }
 
   h1 {
     font-size: var(--fontSuperBig);
