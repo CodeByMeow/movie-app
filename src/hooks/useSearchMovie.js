@@ -9,12 +9,15 @@ const SearchMovie = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
   const [searchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
   const q = searchParams.get('q')
 
   const searchMovies = async () => {
     try {
+      setLoading(true);
       const response = await axios.get(`${SEARCH_BASE_URL}${q}`);
       setMovies(response.data.results);
+      setLoading(false);
     } catch (error) {
       setError(true);
     }
@@ -24,7 +27,7 @@ const SearchMovie = () => {
     searchMovies();
   }, [q]);
 
-  return { movies, error };
+  return { movies, error, loading };
 }
 
 export default SearchMovie;

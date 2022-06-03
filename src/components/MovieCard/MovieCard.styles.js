@@ -59,14 +59,12 @@ export const Thumnail = styled.img`
 export const TextOutline = styled.div`
   position: absolute;
   bottom: 30px;
-  width: calc(100% - 20px);
+  width: 100%;
   background-color: var(--mediumGray);
-  left: 10px;
 `;
 
 export const Text = styled.h4`
   color: var(--white);
   font-size: var(--fontBig);
   text-align: center;
-  padding: 5px;
 `;
