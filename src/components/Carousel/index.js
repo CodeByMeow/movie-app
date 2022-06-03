@@ -20,7 +20,7 @@ const Carousel = (props) => {
     <Wrapper>
       <Content>
         <Slider ref={ref} {...settings} >
-          {movies.map(movie => <MovieCard image={movie.backdrop_path} title={movie.title} key={movie.id} movie_id={movie.id} />)}
+          {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
         </Slider>
       </Content>
     </Wrapper>

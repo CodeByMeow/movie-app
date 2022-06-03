@@ -1,5 +1,4 @@
 import { useHomeFetch } from "../../hooks/useHomeFetch";
-import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../configs";
 import HeroImage from "../../components/HeroImage";
 import Spinner from "../../components/Spinner";
 import Carousel from "../../components/Carousel";
@@ -15,12 +14,7 @@ const HomePage = () => {
   return (
     <>
       {now_playing_movie ? (
-        <HeroImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${now_playing_movie.backdrop_path}`}
-          title={now_playing_movie.title}
-          overview={now_playing_movie.overview}
-          movie_id={now_playing_movie.id}
-        />
+        <HeroImage now_playing_movie={now_playing_movie} />
       ) : null}
 
       {loading && <Spinner />}

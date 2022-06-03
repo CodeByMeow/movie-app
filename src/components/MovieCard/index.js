@@ -1,17 +1,24 @@
-import { Wrapper, Content, Thumnail, Text, TextOutline } from "./MovieCard.styles";
+import { Wrapper, Content, Thumnail, Text, TextOutline, Overlay } from "./MovieCard.styles";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../configs";
+import playIcon from "../../assets/images/play-button-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import noImage from "../../assets/images/no-image.jpg";
 
-const MovieCard = ({ movie_id, title, image }) => {
+const MovieCard = ({ movie }) => {
+  const { id, poster_path, title } = movie;
+  const image = poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${poster_path}` : noImage;
   return (
-    <Link to={`/movie/${movie_id}`}>
+    <Link to={`/movie/${id}`}>
       <Wrapper>
         <Content>
-          <Thumnail src={`${IMAGE_BASE_URL}${POSTER_SIZE}${image}`} />
-          <TextOutline>
-            <Text>{title}</Text>
-          </TextOutline>
+          <Thumnail src={image} />
+          <Overlay>
+            <img src={playIcon} />
+            <TextOutline>
+              <Text>{title}</Text>
+            </TextOutline>
+          </Overlay>
         </Content>
       </Wrapper>
     </Link>
