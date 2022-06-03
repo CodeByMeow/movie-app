@@ -4,12 +4,14 @@ import playIcon from "../../assets/images/play-button-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import noImage from "../../assets/images/no-image.jpg";
+import { convertToSlug } from "../../utils/convertToSlug";
 
 const MovieCard = ({ movie }) => {
-  const { id, poster_path, title } = movie;
+  const { poster_path, title } = movie;
   const image = poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${poster_path}` : noImage;
+  const slug = convertToSlug(title);
   return (
-    <Link to={`/movie/${id}`}>
+    <Link to={`/movie/${slug}`}>
       <Wrapper>
         <Content>
           <Thumnail src={image} />

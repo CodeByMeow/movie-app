@@ -13,7 +13,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: flex-start;
   border-radius: 15px;
-
+  
   :hover > div {
     height: 100%;
   }
@@ -32,7 +32,7 @@ export const Overlay = styled.div`
   background: linear-gradient(to bottom, transparent 0%, black 100%);
   flex: 1;
   border-radius: inherit;
-
+  
   img {
     width: 50px;
     height: 50px;
