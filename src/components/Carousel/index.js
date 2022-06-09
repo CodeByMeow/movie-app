@@ -10,10 +10,24 @@ const Carousel = (props) => {
   const { movies } = props;
   const ref = useRef({});
   const settings = {
-    className: 'section-outstanding__slider',
     slidesToShow: 3,
     arrows: true,
     centerMode: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+
+    ]
   };
 
   return (
